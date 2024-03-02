@@ -16,6 +16,26 @@ function UpdateTime() {
 
   tokyoDateElement.innerHTML = tokyoTime.format("MMMM Do YYYY");
   tokyoTimeElement.innerHTML = tokyoTime.format("h:mm:ss [<small>]A[</small>]");
+
+  let moscowElement = document.querySelector("#moscow");
+  let moscowDateElement = moscowElement.querySelector(".date");
+  let moscowTimeElement = moscowElement.querySelector(".time");
+  let moscowTime = moment().tz("Europe/Moscow");
+
+  moscowDateElement.innerHTML = moscowTime.format("MMMM Do YYYY");
+  moscowTimeElement.innerHTML = moscowTime.format(
+    "h:mm:ss [<small>]A[</small>]"
+  );
+
+  let madridElement = document.querySelector("#madrid");
+  let madridDateElement = madridElement.querySelector(".date");
+  let madridTimeElement = madridElement.querySelector(".time");
+  let madridTime = moment().tz("Europe/Madrid");
+
+  madridDateElement.innerHTML = madridTime.format("MMMM Do YYYY");
+  madridTimeElement.innerHTML = madridTime.format(
+    "h:mm:ss [<small>]A[</small>]"
+  );
 }
 
 UpdateTime();
@@ -36,9 +56,10 @@ function updateCity(event) {
             <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
           </div>
           <div class="time">${cityTime.format(
-            "h:mm:ss [<small>]A[</small]"
+            "h:mm:ss [<small>]A[</small>]"
           )}</div>
-        </div>`;
+        </div>
+        <a href="/">Back to home</a>`;
 }
 
 let citySelectElement = document.querySelector("#city");
